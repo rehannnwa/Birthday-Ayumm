@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Sayang ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<div class="love-popup" id="lovePopup">
+
+  💙 Happy Birthday Ayum 💙
+
+</div>
+<body>
+
+  <!-- PASSWORD -->
+  <div class="lock-screen" id="lockScreen">
+    <div class="lock-card">
+      <h1>🎀 A Special Gift For You 🎀</h1>
+
+      <p>Masukkan password dulu ya ❤️</p>
+
+      <input type="password"
+        id="password"
+        placeholder="Kunci Hati Kamu 🔒">
+
+      <button onclick="checkPassword()">
+        Masuk 💌
+      </button>
+
+      <p id="errorText"></p>
+    </div>
+  </div>
+
+  <!-- WEBSITE -->
+  <div id="website" style="display:none;">
+
+    <!-- MUSIC -->
+    <div class="music-btn" onclick="toggleMusic()">
+      🎵
+    </div>
+
+    <!-- TOMBOL KELUAR -->
+    <div class="logout-btn" onclick="logoutWebsite()">
+      🚪
+    </div>
+
+    <audio id="bg-music" loop>
+      <source src="music.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- PAGE 1 -->
+    <section class="page active" id="page1">
+      <div class="card">
+
+        <h1>Happy Birthday Sayang ❤️</h1>
+
+        <img src="img/foto6.jpg" class="photo">
+
+        <p class="subtitle">
+          Untuk perempuan paling spesial di hidupku ✨
+        </p>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown">
+          <div>
+            <span id="days">0</span>
+            <small>Hari</small>
+          </div>
+
+          <div>
+            <span id="hours">0</span>
+            <small>Jam</small>
+          </div>
+
+          <div>
+            <span id="minutes">0</span>
+            <small>Menit</small>
+          </div>
+
+          <div>
+            <span id="seconds">0</span>
+            <small>Detik</small>
+          </div>
+        </div>
+
+        <button onclick="nextPage(2)">
+          Buka 💖
+        </button>
+
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+      <div class="card">
+
+        <h2>Ayumm ❤️</h2>
+
+        <p>
+          Terima kasih sudah hadir di hidupku.
+          Aku bersyukur bisa kenal kamu sampai sekarang.
+        </p>
+
+        <p>
+          Semoga semua impianmu tercapai,
+          selalu sehat dan bahagia ✨
+        </p>
+
+        <div class="btn-group">
+
+          <button onclick="prevPage(1)">
+            ⬅ Kembali
+          </button>
+
+          <button onclick="nextPage(3)">
+            Lanjut 🌸
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page" id="page3">
+      <div class="card">
+
+        <h2>Galeri Kenangan 📸</h2>
+
+        <div class="slider">
+
+          <div class="slides" id="slides">
+
+            <img src="img/foto1.jpg">
+            <img src="img/foto2.jpg">
+            <img src="img/foto3.jpg">
+            <img src="img/foto4.jpg">
+            <img src="img/foto5.jpg">
+            <img src="img/foto6.jpg">
+            <img src="img/foto7.jpg">
+            <img src="img/foto8.jpg">
+            <img src="img/foto9.jpg">
+            <img src="img/foto10.jpg">
+            <img src="img/foto11.jpg">
+            <img src="img/foto12.jpg">
+            <img src="img/foto13.jpg">
+            <img src="img/foto14.jpg">
+            <img src="img/foto15.jpg">
+          </div>
+
+        </div>
+        <div class="btn-group">
+
+        <button onclick="prevPage(2)">
+          ⬅ Kembali
+        </button>
+
+        <button onclick="nextPage(4)">
+          Surat Untukmu 💌
+        </button>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page" id="page4">
+      <div class="card">
+
+        <h2>Surat Cinta Untuk Ayumm ❤️</h2>
+
+        <p class="love-letter">
+          Hai sayangku...
+          <br><br>
+
+          Selamat ulang tahun ya ❤️
+          Aku harap di umurmu yang sekarang,
+          kamu selalu diberikan kebahagiaan,
+          kesehatan, dan semua hal baik.
+
+          <br><br>
+
+          Terima kasih sudah bertahan sampai sejauh ini,
+          dan terima kasih sudah menjadi alasan bahagiaku.
+
+          <br><br>
+
+          mwwahh mwwahh mwwahh ✨
+        </p>
+
+        <div class="btn-group">
+
+        <button onclick="prevPage(3)">
+          ⬅ Kembali
+        </button>
+
+        <button onclick="nextPage(5)">
+          Terakhir 🎁
+        </button>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGE 5 -->
+    <section class="page" id="page5">
+      <div class="card">
+
+        <h1>I LOVE YOU ❤️</h1>
+
+        <img src="img/foto5.jpg" class="photo">
+
+        <p>
+          Happy Birthday 🎂
+        </p>
+
+        <div class="btn-group">
+
+        <button onclick="prevPage(4)">
+          ⬅ Kembali
+        </button>
+
+        <button onclick="specialLove()">
+          Peluk Virtual 🤗
+        </button>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

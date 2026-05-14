@@ -1,0 +1,559 @@
+/* =========================
+FINAL STYLE CSS
+BLUE OCEAN ROMANTIC
+RESPONSIVE + AUTO SLIDE
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
+
+/* =========================
+FIX SCROLL FINAL
+TAMBAHKAN / GANTI DI style.css
+========================= */
+
+/* BODY */
+
+body{
+
+  background:
+    linear-gradient(
+      135deg,
+      #021b33,
+      #043b6b,
+      #0b5ea8,
+      #38bdf8
+    );
+
+  color:white;
+
+  position:relative;
+
+  /* FIX */
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+/* PAGE */
+
+.page{
+
+  width:100%;
+
+  min-height:100vh;
+
+  display:none;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  padding:40px 20px;
+
+  overflow-y:auto;
+}
+
+.page.active{
+  display:flex;
+}
+
+/* CARD */
+
+.card{
+
+  width:380px;
+  max-width:90%;
+
+  padding:25px;
+
+  margin:auto;
+
+  border-radius:30px;
+
+  text-align:center;
+
+  background:
+    rgba(255,255,255,0.10);
+
+  backdrop-filter:blur(14px);
+
+  border:
+    1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 10px 40px rgba(0,140,255,0.20);
+
+  animation:fade 1s ease;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+}
+/* RESPONSIVE HP */
+
+@media(max-width:480px){
+
+  body{
+
+    overflow-x:hidden;
+    overflow-y:auto;
+  }
+
+  .page{
+
+    padding:25px 15px;
+  }
+
+  .card{
+
+    width:100%;
+
+    max-height:none;
+
+    overflow:visible;
+
+    padding:20px;
+  }
+}
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar{
+  width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:
+    rgba(255,255,255,0.3);
+
+  border-radius:20px;
+}
+/* ANIMATION */
+
+@keyframes fade{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* TITLE */
+
+h1,h2{
+
+  color:#dff6ff;
+
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+  from{
+    text-shadow:
+      0 0 10px #7dd3fc;
+  }
+
+  to{
+    text-shadow:
+      0 0 25px #38bdf8;
+  }
+}
+
+/* TEXT */
+
+p{
+
+  line-height:1.8;
+
+  color:#eef9ff;
+}
+
+/* FOTO */
+
+.photo{
+
+  width:170px;
+  height:220px;
+
+  object-fit:cover;
+
+  border-radius:20px;
+
+  margin:auto;
+
+  box-shadow:
+    0 10px 25px rgba(0,140,255,0.35);
+}
+
+/* BUTTON */
+
+button{
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:15px;
+
+  background:
+    linear-gradient(
+      45deg,
+      #38bdf8,
+      #0ea5e9
+    );
+
+  color:white;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  box-shadow:
+    0 5px 20px rgba(56,189,248,0.4);
+}
+
+button:hover{
+
+  transform:scale(1.05);
+}
+
+/* COUNTDOWN */
+
+.countdown{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:10px;
+}
+
+.countdown div{
+
+  background:
+    rgba(255,255,255,0.12);
+
+  padding:8px;
+
+  border-radius:15px;
+
+  backdrop-filter:blur(10px);
+}
+
+.countdown span{
+
+  display:block;
+
+  font-size:18px;
+
+  font-weight:bold;
+}
+
+/* =========================
+SLIDER FOTO
+========================= */
+
+.slider{
+
+  width:240px;
+  height:320px;
+
+  overflow:hidden;
+
+  margin:auto;
+
+  border-radius:20px;
+
+  position:relative;
+
+  box-shadow:
+    0 10px 25px rgba(0,140,255,0.35);
+}
+
+.slides{
+
+  display:flex;
+
+  transition:
+    transform 1s ease-in-out;
+}
+
+.slides img{
+
+  width:240px;
+  height:320px;
+
+  object-fit:cover;
+
+  flex-shrink:0;
+
+  border-radius:20px;
+}
+
+/* LETTER */
+
+.love-letter{
+
+  text-align:left;
+
+  line-height:1.9;
+}
+
+/* MUSIC & LOGOUT */
+
+.music-btn,
+.logout-btn{
+
+  position:fixed;
+
+  width:55px;
+  height:55px;
+
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  cursor:pointer;
+
+  font-size:22px;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(10px);
+
+  border:
+    1px solid rgba(255,255,255,0.2);
+
+  z-index:100;
+
+  transition:0.3s;
+}
+
+.music-btn:hover,
+.logout-btn:hover{
+
+  transform:scale(1.1);
+}
+
+.music-btn{
+
+  top:20px;
+  right:20px;
+}
+
+.logout-btn{
+
+  top:20px;
+  left:20px;
+}
+
+/* PASSWORD */
+
+.lock-screen{
+
+  width:100%;
+  height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.lock-card{
+
+  width:350px;
+  max-width:90%;
+
+  padding:30px;
+
+  border-radius:30px;
+
+  text-align:center;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(14px);
+
+  border:
+    1px solid rgba(255,255,255,0.2);
+}
+
+.lock-card input{
+
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:15px;
+
+  margin:15px 0;
+
+  outline:none;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  color:white;
+}
+
+/* HUJAN HATI */
+
+.heart{
+
+  position:fixed;
+
+  top:-20px;
+
+  color:#dff6ff;
+
+  animation:
+    rain linear forwards;
+
+  opacity:0.8;
+
+  z-index:-1;
+}
+
+@keyframes rain{
+
+  from{
+    transform:translateY(-10vh);
+    opacity:1;
+  }
+
+  to{
+    transform:translateY(110vh);
+    opacity:0;
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:480px){
+
+  body{
+    overflow:auto;
+  }
+
+  .card{
+
+    width:100%;
+
+    padding:20px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  h2{
+    font-size:22px;
+  }
+
+  p{
+    font-size:14px;
+  }
+
+  .slider{
+
+    width:210px;
+    height:280px;
+  }
+
+  .slides img{
+
+    width:210px;
+    height:280px;
+  }
+
+  .countdown{
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  button{
+    width:100%;
+  }
+}
+
+/* =========================
+POPUP LOVE
+========================= */
+
+.love-popup{
+
+  position:fixed;
+
+  bottom:-100px;
+
+  left:50%;
+
+  transform:translateX(-50%);
+
+  background:
+    rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(10px);
+
+  padding:15px 25px;
+
+  border-radius:20px;
+
+  color:white;
+
+  font-weight:bold;
+
+  box-shadow:
+    0 10px 30px rgba(0,140,255,0.35);
+
+  transition:0.5s;
+
+  z-index:999;
+}
+
+/* SHOW */
+
+.love-popup.show{
+
+  bottom:30px;
+}
+
+/* =========================
+BUTTON GROUP
+========================= */
+
+.btn-group{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-top:15px;
+}
+
+.btn-group button{
+
+  flex:1;
+}
