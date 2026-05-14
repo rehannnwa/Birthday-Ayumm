@@ -18,7 +18,6 @@ function nextPage(pageId){
 }
 
 /* PASSWORD */
-
 const music =
 document.getElementById("bg-music");
 
@@ -39,7 +38,22 @@ function checkPassword(){
       .getElementById("website")
       .style.display = "block";
 
-    music.play();
+    /* PLAY MUSIC */
+
+    music.volume = 0.5;
+
+    const playPromise =
+      music.play();
+
+    if(playPromise !== undefined){
+
+      playPromise.catch(error=>{
+
+        console.log(
+          "Autoplay diblokir"
+        );
+      });
+    }
 
   }else{
 
@@ -50,13 +64,17 @@ function checkPassword(){
   }
 }
 
+
 /* MUSIC */
 
 function toggleMusic(){
 
   if(music.paused){
+
     music.play();
+
   }else{
+
     music.pause();
   }
 }
